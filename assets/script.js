@@ -78,3 +78,33 @@ document.addEventListener('DOMContentLoaded', function () {
             endQuiz();
         }
     }
+
+    function checkAnswer(selectedAnswer) {
+        const currentQuestion = questions[currentQuestionIndex];
+        if (selectedAnswer === currentQuestion.correctAnswer) {
+        } else {
+            timeLeft -= 10;
+            updateTimerDisplay();
+        }
+        currentQuestionIndex++;
+        renderQuestion();
+    }
+    function updateTimerDisplay() {
+        timerElement.textContent = timeLeft;
+    }
+    function endQuiz() {
+        clearInterval(timer);
+        quizContainer.style.display = 'none';
+        endPage.style.display = 'block';
+        finalScoreElement.textContent = calculateScore();
+    }
+    function calculateScore() {
+        return timeLeft;
+    }
+    function updateTimer() {
+        if (timeLeft <= 0) {
+            endQuiz();
+        }
+        updateTimerDisplay();
+        timeLeft--;
+    }
