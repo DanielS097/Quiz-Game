@@ -44,3 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
         resetQuiz();
         startQuiz();
     });
+
+    function startQuiz() {
+        landingPage.style.display = 'none';
+        quizContainer.style.display = 'block';
+        timerContainer.style.display = 'block';
+        timer = setInterval(updateTimer, 1000);
+        renderQuestion();
+    }
