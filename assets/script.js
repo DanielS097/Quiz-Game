@@ -126,3 +126,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function displayHighScores(scores) {
+        highScoresList.innerHTML = '';
+        scores.forEach(score => {
+            const scoreItem = document.createElement('li');
+            scoreItem.textContent = `${score.initials}: ${score.score}`;
+            highScoresList.appendChild(scoreItem);
+        });
+    }
+
