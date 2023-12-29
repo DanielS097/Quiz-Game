@@ -135,3 +135,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    const clearHighScoresButton = document.getElementById('clearHighScoresButton');
+    clearHighScoresButton.addEventListener('click', clearHighScores);
+    function clearHighScores() {
+        localStorage.removeItem('highScores');
+        displayHighScores([]);
+    }
+
