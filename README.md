@@ -18,6 +18,9 @@ I overcame these challenges by breaking all issues into smaller pieces and figur
 ## Where was help present?
 Help is present in most of the code. Unfortunately no help was from my tutor, but I made sure to ask on different coding platforms and ask people that I know the correct questions in order to get help with my code. The idea of "help is present in most of the code" is basically that I looked for help for each bit of the code before I wrote it down. It was also a lot of testing before deploying it.
 
+## Screenshot of the app:
+![image_720](https://github.com/DanielS097/Quiz-Game/assets/150180293/a859b98c-bb56-42f9-b502-036c362e9655)
+
 ## URL of the app:
 https://daniels097.github.io/Quiz-Game/
 
