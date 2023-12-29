@@ -142,3 +142,12 @@ document.addEventListener('DOMContentLoaded', function () {
         displayHighScores([]);
     }
 
+    function resetQuiz() {
+        currentQuestionIndex = 0;
+        timeLeft = 60;
+        quizContainer.innerHTML = '';
+        endPage.style.display = 'none';
+        timerContainer.style.display = 'none';
+    }
+});
+
