@@ -108,3 +108,21 @@ document.addEventListener('DOMContentLoaded', function () {
         updateTimerDisplay();
         timeLeft--;
     }
+
+    initialsForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        saveScore();
+    });
+    function saveScore() {
+        const initialsInput = document.getElementById('initials');
+        const initials = initialsInput.value.trim();
+        if (initials !== '') {
+            const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+            const newScore = { initials: initials, score: calculateScore() };
+            highScores.push(newScore);
+            highScores.sort((a, b) => b.score - a.score);
+            localStorage.setItem('highScores', JSON.stringify(highScores));
+            displayHighScores(highScores);
+        }
+    }
+
