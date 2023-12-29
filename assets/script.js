@@ -52,3 +52,29 @@ document.addEventListener('DOMContentLoaded', function () {
         timer = setInterval(updateTimer, 1000);
         renderQuestion();
     }
+
+
+    function renderQuestion() {
+        if (currentQuestionIndex < questions.length) {
+            const currentQuestion = questions[currentQuestionIndex];
+            const questionElement = document.createElement('div');
+            questionElement.innerHTML = `
+                <h2>${currentQuestion.question}</h2>
+                <button class="answer-btn">A. ${currentQuestion.answers[0]}</button>
+                <button class="answer-btn">B. ${currentQuestion.answers[1]}</button>
+                <button class="answer-btn">C. ${currentQuestion.answers[2]}</button>
+                <button class="answer-btn">D. ${currentQuestion.answers[3]}</button>
+            `;
+            quizContainer.innerHTML = '';
+            quizContainer.appendChild(questionElement);
+            const answerButtons = document.querySelectorAll('.answer-btn');
+            answerButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    checkAnswer(this.textContent.slice(3));
+                });
+            });
+            updateTimerDisplay();
+        } else {
+            endQuiz();
+        }
+    }
